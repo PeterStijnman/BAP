@@ -1,0 +1,71 @@
+\documentclass[parskip=full,11pt,a4paper,titlepage]{article}
+\usepackage{import}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage[export]{adjustbox}
+\usepackage[]{mcode}
+\inputfrom{.}{macros}
+
+\title{TITLE}
+ \author{Alex Janssen}
+\bibliographystyle{harvard}
+\date{\today}
+\begin{document}
+\input{frontpage}
+
+
+\clearpage
+
+\begin{center}
+This page is intentionally left blank
+\end{center}
+\clearpage
+
+
+
+\tableofcontents
+\clearpage
+
+\section{introduction}
+\subimport{}{introduction}
+\clearpage
+
+\section{LIDAR}
+\subimport{}{lidar}
+\clearpage
+
+\section{Telecommunications}
+%\subimport{}{}
+
+\section{CMOS and CCD cameras}
+\subimport{}{Cameras}
+\clearpage
+
+\section{Microcontroller}
+\subimport{}{MC}
+\clearpage
+
+\section{Bibliography}
+%\subimport{}{library/bibliography}
+
+
+
+%\clearpage
+%\appendix
+%\inputfrom{Appendix/}{main.tex}
+%\clearpage
+%\begin{thebibliography}{9}
+
+%\bibitem{labelboek1} %%%LABEL NIET VERANDEREN
+%E.A. Hendriks, A. Bakker, A. Frehe, P. Groeneveld
+%R. Nouta, C. Verhoeven, S. de Graaf, J. Liedorp, A.J. van Genderen, 
+%\emph{Project Maak een Chip}, 
+%Delft University of Technology, 
+%September 2013.
+
+%\end{thebibliography}
+
+
+\input{backpage}
+\end{document}
