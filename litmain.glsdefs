@@ -1,0 +1,30 @@
+\ifglsentryexists{CCD}{}%
+{%
+\gls@defglossaryentry{CCD}%
+{%
+name={CCD},%
+sort={CCD},%
+type={main},%
+first={CCD},%
+firstplural={CCDs},%
+text={CCD},%
+plural={CCDs},%
+description={Charged-coupled device},%
+descriptionplural={Charged-coupled device},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
