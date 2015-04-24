@@ -5,45 +5,45 @@
 \begin{document}
 
 
-Lidar is an acronym for Light Detection and Ranging. It is a technique that uses a laser beam to detect or scan objects. It is an active form of remote sensing. So information is obtained by sending a signal from a transmitter which can be reflected by a target. A detector can pick up the reflected signal to determine different types of information about the object. These types are range, chemical properties and velocity.
-In our case we are only interested in the range of the object, since our goal is to avoid collisions with objects. The measurement of the range or distance of the object is based on precise measurement of time. There are two main methods to do this, the timed pulse method and the phase comparison method.
+LIDAR is an acronym for Light Detection and Ranging. It is a technique that uses a laser beam to detect or scan objects. It is an active form of remote sensing. So information is obtained by sending a signal from a transmitter which can be reflected by a target. A detector can pick up the reflected signal to determine different types of information about the object. These types are range, chemical properties and velocity.
+In our case we are only interested in the range of the object, since our goal is to avoid collisions with static objects. The measurement of the range or distance of the object is based on a precise measurement of time. There are two main methods to do this, the timed pulse method and the phase comparison method.
 
 
 \subsection{Timed Pulse Method}
 
-As the name indicates, the timed pulse method measures the time required for a very short pulse of laser radiation to travel to the target and back. This method can be used to measure distances of tens of meters to hundreds of kilometers. Below is the generic type of a laser rangefinder shown, of course the actual design and the specific components that will be used in a particular instrument will depend on the particular application. In our case the laser will be a small low powered laser instead of a high powered one.
+As the name indicates, the timed pulse method measures the time required for a very short pulse of laser radiation to travel to the target and back. This method can be used to measure distances of tens of meters to hundreds of kilometers. In figure \ref{lidar1} is the generic type of a laser rangefinder shown, of course the actual design and the specific components that will be used in a particular instrument will depend on the particular application. In our case the laser will be a small low-powered laser instead of a high-powered one.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{figures/TimedPulse}
-	\caption{ }
+	\caption{Laser rangefinder. }
 	\label{lidar1}
 \end{figure}
 
-A lens is placed in front of the laser to first expand and then collimate the laser pulse so the divergence is kept to a minimum. A small part of the energy of an emitted pulse will be diverted by a partly reflecting mirror to a photodiode. This will trigger a timing device with a simple threshold which is usually connected to a very stable oscillator. When the pulse is reflected from the object the returning pulse is picked up by the receiving lens or mirror optics. Because the pulse will collide with the object and tiny particles in the air, the beam will be scattered and very weak in intensity compared to the sent laser pulse. Therefore it is needed to amplify the returned pulse electricallyafter it has been picked up by a very sensitive photodiode. To reduce the noise picked up by this photodiode (e.g. sunlight) 
-narrowband optical filters are placed over it. In simple cases, this picked up reflected pulse will deliver a stop pulse to the timer counter. When this stop pulse reaches a certain threshold the counter will be stopped. When more state-of-the-art systems are used, a more complex triggering mechanism is used of course. Since the time it took for the sent pulse to travel to the object and back is now known, the distance can be calculated using the constant speed of light.
+A lens is placed in front of the laser to first expand and then collimate the laser pulse so the divergence is kept to a minimum. A small part of the energy of an emitted pulse will be diverted by a partly reflecting mirror to a photodiode. This will trigger a timing device with a simple threshold which is usually connected to a very stable oscillator. When the pulse is reflected from the object the returning pulse is picked up by the receiving lens or mirror optics. Because the pulse will collide with the object and tiny particles in the air, the beam will be scattered and very weak in intensity compared to the sent laser pulse. Therefore it is needed to amplify the returned pulse electrically after it has been picked up by a sensitive photodiode. To reduce the noise picked up by this photodiode (e.g. sunlight) 
+narrowband optical filters are placed over it. In simple cases, this picked up reflected pulse will deliver a stop pulse to the timer counter. When this stop pulse reaches a certain threshold the counter will be stopped. When more state-of-the-art systems are used, a more complex triggering mechanism is used of course. Since the time it took for the sent pulse to travel to the object and back is now known, the distance can be calculated using the speed of light.
 
 \subsection{Phase Comparison Method}
 
-In contrast to the timed pulse method, a continuous laser beam is used in the phase comparison method. A continuous laser beam is often abbreviated to CW laser, which stands for continuous wave laser.Because of the limited power of a CW laser it is almost never used for long range systems. On the other hand, this makes it very suitable for measuring shorter distances (typically \textless 100m). In the phase comparison method, the emitted beam is a basic carrier signal on which a modulation signal has been superimposed. This modulation signal is used to measure the difference in phase of the transmitted and received signal. The frequency of the modulation signal is held at a constant value using a stable oscillator. This means the modulation wave can be used to control the amplitude of the carrier wave, which is known as amplitude modulation. A picture of the modulation process is shown below. 
+In contrast to the timed pulse method, a continuous laser beam is used in the phase comparison method. A continuous laser beam is often abbreviated to CW laser, which stands for continuous wave laser.Because of the limited power of a CW laser it is almost never used for long range systems. On the other hand, this makes it very suitable for measuring shorter distances (typically \textless 100m). In the phase comparison method, the emitted beam is a basic carrier signal on which a modulation signal has been superimposed. This modulation signal is used to measure the difference in phase of the transmitted and received signal. The frequency of the modulation signal is held at a constant value using a stable oscillator. This means the modulation wave can be used to control the amplitude of the carrier wave, which is known as amplitude modulation. A picture of the modulation process is shown in figure \ref{lidar2}. 
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{figures/Modulation}
-	\caption{ }
+	\caption{Amplitude modulation. }
 	\label{lidar2}
 \end{figure}
 
 
-In the phase comparison method the emitted CW laser is also reflected by an object it collides with. This means a small part of the emitted beam will be reflected and will travel back through the same path as the emitted beam. Just like the timed pulse method the reflected signal is detected using a photodiode and amplified. After amplification the signal will be demodulated, this means the carrier and the modulation signal will be separated. Now the phase ofreflected signal is compared to the original emitted signal, from this the phase angle between the two signals can be obtained. The graphs below show how the transmitted signal is reflected by an object and picked up by the receiver (a), and how the phase angle is determined between the transmitted and received signal (b). 
+In the phase comparison method the emitted CW laser is also reflected by an object it collides with. This means a small part of the emitted beam will be reflected and will travel back through the same path as the emitted beam. Just like the timed pulse method the reflected signal is detected using a photodiode and amplified. After amplification the signal will be demodulated, this means the carrier and the modulation signal will be separated. Now the phase of reflected signal is compared to the original emitted signal, from this the phase angle between the two signals can be obtained. The graphs in figure \ref{lidar3} show how the transmitted signal is reflected by an object and picked up by the receiver (a), and how the phase angle is determined between the transmitted and received signal (b). 
 
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{figures/Phaseangle}
-	\caption{ }
+	\caption{Phase angle measurement method }
 	\label{lidar3}
 \end{figure}
 

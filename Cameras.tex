@@ -4,44 +4,44 @@
 \input{../library/style}  
 \begin{document}
 
-For the zebro to get from one point to another manually cameras are needed to see the surroundings and navigate through them. Furthermore when the the zebro needs to use its arm for a task it is very easy if there is a camera in the arm as well. This because the point of view makes it easier to grab objects or drill in the right spot. The two camera options the team has is a CMOS image sensor or a CCD.
+For the robot to get from one point to another manually, cameras are needed to see the surroundings and navigate through them. Furthermore, when the the robot needs to use its arm for a task it is convenient if there is a camera in the arm as well. This is because the point of view makes it easier to grab objects or drill in the right spot. The two camera options the team has is a CMOS image sensor or a CCD.
 
 
 
 \subsection{CCD}
 
-When a CCD is exposed to light the small photosites on the surface of the CCD capture the light and store it in the form of a charge, as seen in figure \ref{ccd1} .
+When a CCD, short for charge-coupled device, is exposed to light the small photosites on the surface of the CCD capture the light and store it in the form of a charge, as seen in figure \ref{ccd1} .
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{figures/sensors_photosites-mono}
-	\caption{Representation of photosites. }
+	\caption{Representation of photosites, charges are collected at the electrodes. }
 	\label{ccd1}
 \end{figure}
 
 
-To read out the charge of each photosite a complete row is put into an amplifier one photosite at a time and after that the amplified signal is then passed on to an ADC. When the complete row has been read out the row above it moves one down, as do all the rows above, and then that row goes through the amplifier and ADC. This process is done until all rows are read and the image is now digital. This is also where the name comes from , charge-coupled device, because the rows of charges are coupled to the row above them. When one moves down all do. A visual representation is seen in figure \ref{ccd2}.
+To read out the charge of each photosite a complete row is put into an amplifier one photosite at a time and after that the amplified signal is then passed on to an ADC, analog to digital converter. When the complete row has been read out the row above it moves one down, as do all the rows above, and then that row goes through the amplifier and ADC. This process is done until all rows are read and the image is now digital. This is also where the name comes from , charge-coupled device, because the rows of charges are coupled to the row above them. When one moves down all do. A visual representation is seen in figure \ref{ccd2}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{figures/ccdreadout}
-	\caption{Visual image of how the CCD reads out the array of photosites. }
+	\caption{Visual image of how the CCD reads out the array of photosites. This happens one row at a time.}
 	\label{ccd2}
 \end{figure}
 
-The polysilicon electrodes on the surface of the chip are so small and close together that the charge is kept intact when physically moving from the place where the light was actually captured to the place where the signal is amplified. To achieve this a clock is needed to move all the charges at the same time, this needs to be done by an off-chip (or secondary chip). This is order to not interfere with the closely packed polysilicon electrodes on the chip. 
+The polysilicon electrodes on the surface of the chip are so small and close together that the charge is kept intact when physically moving from the place where the light was actually captured to the place where the signal is amplified. To achieve this a clock is needed to move all the charges at the same time, this needs to be done by an off-chip (or secondary chip). This is in order to not interfere with the closely packed polysilicon electrodes on the chip. 
 
-Because the CCD needs extra circuitry which needs to be accurate it can result in a very specified circuit with multiple power sources that need to operate at different, critical values which might not be regular. It is not rare for CCDs to have 5 or 6 of these power sources, this means that a lot of power is needed to operate the chip as intended.
+Because the CCD needs extra circuitry which needs to be accurate, it can result in a very specified circuit with multiple power sources that need to operate at different, critical values which might not be regular. It is not rare for CCDs to have 5 or 6 of these power sources, this means that a lot of power is needed to operate the chip as intended.
 
 
 \subsection{CMOS image sensor}
 
-A newer technology is the CMOS image sensor, it can be easily incorporated with chips and other circuitry made on the same CMOS wafers. There are two basic types of CMOS image sensors, one being passive and the other active. The passive-pixel sensor works along the same principles as the CCD however now the circuitry is on the same chip as the sensors/photosites. This causes noise which can be seen on the image produced. The active-pixel sensors have extra circuitry at each pixel to cancel out the noise, this increases the quality of the image and makes it possible to go for higher resolutions. Here the performance can be equal to that of the CCDs. The negative side here is that this takes up extra space within the area of the photosites/pixels, see figure \ref{cmos1}. This results in the photosites not being as close to each other as they are at the CCDs for example (the fillfactor is lower compared to CCDs). Because there is less area capturing the light there is of course a lower charge thus a lower amplitude signal running through the ADC. For the image itself this results in a lower light intensity. This makes the image appear darker than it actually is and therefor makes the CMOS image sensor  less qualified to takes images in dark surroundings.
+A newer technology is the CMOS image sensor, it can be easily incorporated with chips and other circuitry made on the same CMOS wafers. There are two basic types of CMOS image sensors, one being passive and the other active. The passive-pixel sensor works along the same principles as the CCD however now the circuitry is on the same chip as the sensors/photosites. This causes noise which can be seen on the image produced. The active-pixel sensors have extra circuitry at each pixel to cancel out the noise, this increases the quality of the image and makes it possible to go for higher resolutions. Here the performance can be equal to that of the CCDs. The negative side here is that this takes up extra space within the area of the photosites/pixels, see figure \ref{cmos1}. This results in the photosites not being as close to each other as they are at the CCDs for example (the fillfactor is lower compared to CCDs). Because there is less area capturing the light. This results in a lower charge thus a lower amplitude signal running through the ADC. For the image itself this results in a lower light intensity. This makes the image appear darker than it actually is and therefor makes the CMOS image sensor  less qualified to take images of dark environments.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{figures/fillfactor}
-	\caption{An image of the circuitry around the photosites. }
+	\caption{An abstraction of the circuitry around the photosites. }
 	\label{cmos1}
 \end{figure}
 
