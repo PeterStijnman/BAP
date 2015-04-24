@@ -1,0 +1,55 @@
+\documentclass{article}  
+\usepackage{array}
+\input{../library/preamble}  
+\input{../library/style}  
+\begin{document}
+
+
+For the robot to know where it is heading and how it needs to get there it needs to know its own position. For this GPS can be used to acquire the coordinates. With these coordinates a path can be made for the robot to get to the specified point. GPS uses signals transmitted from satelllites to the GPS receiver that is located on the robot. From this signal the time can be derived it took to get the signal from the GPS receiver to the satellite. With enough of these measurements the correct position can be calculated.
+
+\subsection{Measurement of the distance to the satellites}
+
+The GPS receiver sends a signal to a satellite. When it reaches the satellite a signal is sent back to the GPS receiver which receives the exact signal back. From this it can look when it sended its own signal an compare the time with the moment the signal from the satellite reached the GPS receiver. From this time the distance can be computed following equation \ref{dis}.
+
+\begin{equation}
+d = \frac{c*t}{2}
+\label{dis}
+\end{equation}
+
+where d is the distance, c is the speed of light ($3*10^8 m/s$), t is the time it took for the signal to travel from the receiver to the satellite and back. And the divided by $2$ comes from the fact that the time the receiver measures is the time it took to go to the satellite and back. This means the required distance is measured twice.
+
+\subsection{Calculating the position}
+
+To explain how the position is computed an example will be used. When the distance from the satellite is known it results in a geometry problem using spheres. When the distance is known from one satellite the receiver knows it is somewhere located on a sphere with the satellite at its center and the radius equals the distance computed earlier. This is shown in figure \ref{sat1}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{figures/1msmt}
+	\caption{Possible position using 1 satellite. }
+	\label{sat1}
+\end{figure}
+
+When a second satellite is added to this cofiguration the receiver knows that is somewhere on the intersection points of those two spheres. These instersection points are located on a circle this is indicated with the black circle shown in figure \ref{sat2}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{figures/2msmts}
+	\caption{Possible position using 2 satellites. }
+	\label{sat2}
+\end{figure}
+
+The next step is to add another satellite. This will result on the receiver knowing it is somewhere on the intersection points of the three spheres around satellite 1,2,3. As shown in figure \ref{sat3} only two intersection points remain ( indicated with the red dots).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{figures/3msmts}
+	\caption{Possible position using 3 satellites. }
+	\label{sat3}
+\end{figure}
+
+Most of the time from these two points the receiver can make a choice on its own which point it is located at since the other intersection point has a high chance of being nowhere near earth. If this is not the case the receiver will measure its distance from a fourth satellite and only one intersection point should remain, being the location of the receiver.
+
+
+
+
+\end{document}
