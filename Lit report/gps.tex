@@ -7,7 +7,7 @@
 
 For the robot to know where it is heading and how it needs to get there it needs to know its own position. For this GPS, otherwise known as global positioning system, can be used to acquire the coordinates. With these coordinates a path can be made for the robot to get to the specified point. GPS uses signals transmitted from satelllites to the GPS receiver that is located on the robot. From this signal the time can be derived it took to get the signal from the GPS receiver to the satellite. With enough of these measurements the correct position can be calculated.
 
-\subsection{Measurement of the distance to the satellites}
+\subsubsection{Measurement of the distance to the satellites}
 
 The GPS receiver sends a signal to a satellite. When it reaches the satellite a signal is sent back to the GPS receiver which receives the exact signal back. From this it can look when it sended its own signal an compare the time with the moment the signal from the satellite reached the GPS receiver. From this time the distance can be computed following equation \ref{dis}.
 
@@ -18,7 +18,7 @@ d = \frac{c*t}{2}
 
 where d is the distance, c is the speed of light ($3*10^8 m/s$), t is the total travelling. The divided by $2$ comes from the fact that the time the receiver measures is the time it took to go to the satellite and back. This means the required distance is measured twice.
 
-\subsection{Calculating the position}
+\subsubsection{Calculating the position}
 
 To explain how the position is computed an example will be used. When the distance from the satellite is known it results in a geometry problem using spheres. When the distance is known from one satellite the receiver knows it is somewhere located on a sphere with the satellite at its center and the radius equals the distance computed earlier. This is shown in figure \ref{sat1}
 

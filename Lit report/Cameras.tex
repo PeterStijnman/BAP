@@ -8,7 +8,7 @@ For the robot to get from one point to another manually, cameras are needed to s
 
 
 
-\subsection{CCD}
+\subsubsection{CCD}
 
 When a CCD, short for charge-coupled device, is exposed to light the small photosites on the surface of the CCD capture the light and store it in the form of a charge, as seen in figure \ref{ccd1} .
 
@@ -34,7 +34,7 @@ The polysilicon electrodes on the surface of the chip are so small and close tog
 Because the CCD needs extra circuitry which needs to be accurate, it can result in a very specified circuit with multiple power sources that need to operate at different, critical values which might not be regular. It is not rare for CCDs to have 5 or 6 of these power sources, this means that a lot of power is needed to operate the chip as intended.
 
 
-\subsection{CMOS image sensor}
+\subsubsection{CMOS image sensor}
 
 A newer technology is the CMOS image sensor, it can be easily incorporated with chips and other circuitry made on the same CMOS wafers. There are two basic types of CMOS image sensors, one being passive and the other active. The passive-pixel sensor works along the same principles as the CCD however now the circuitry is on the same chip as the sensors/photosites. This causes noise which can be seen on the image produced. The active-pixel sensors have extra circuitry at each pixel to cancel out the noise, this increases the quality of the image and makes it possible to go for higher resolutions. Here the performance can be equal to that of the CCDs. The negative side here is that this takes up extra space within the area of the photosites/pixels, see figure \ref{cmos1}. This results in the photosites not being as close to each other as they are at the CCDs for example (the fillfactor is lower compared to CCDs). Because there is less area capturing the light. This results in a lower charge thus a lower amplitude signal running through the ADC. For the image itself this results in a lower light intensity. This makes the image appear darker than it actually is and therefor makes the CMOS image sensor  less qualified to take images of dark environments.
 
@@ -47,7 +47,7 @@ A newer technology is the CMOS image sensor, it can be easily incorporated with 
 
 
 
-\subsection{Comparison}
+\subsubsection{Comparison}
 
 CMOS imagers have a better intergration in circuits compared to the CCD cameras. Plus they use less power and are smaller. The negative here is that CMOS imagers have a lower image quality. Making them they less useful in high end image applications. Another negative for CMOS imagers compared to CCD cameras is that they are less flexible. This due to the circuitry already around the sensor, this is needed for it to work and cannot be changed while a CCD can be implemented in more systems. So the overall trend is that CMOS   imagers are used for lower end imaging applications and in mass production while their counterpart the CCD is more suitable for the high end imaging applications.
 
