@@ -1,0 +1,30 @@
+\documentclass{article}  
+\usepackage{array}
+\input{../library/preamble}  
+\input{../library/style}  
+\begin{document}
+
+With the zebro being modular, it was neccessary to make our own PCB for on the backbone. This means that there is limited space and that there is already an existing connection between all the different modules. This constrains the freemdom of designing the PCB.\\
+The board needs to act as an central point for the zebro through which all the data flows from and to the user side. Next to this there are extra peripherals like the camera's and LIDAR. These need a conenction to the microcontroller on the board. \\
+First of the board itself needed to be made. Next was the layout of the components and the last thing on the list is the routing of all the components. The final version of the board is visible in appendix \ref{AppendixA}.
+
+
+\subsubsection{Board design}
+
+On the backbone we got the space to fit onto the ZPU board. This board had the dimensions of 75cm length (y-axis) and 80cm width (x-axis). During the layout of the components it became visible that using the  dimension would result in 0.3mm gaps between the Xbee, WiFi module and the connectors. This was a risk we were not willing to take because if the all components came out slightly bigger as mentioned in the datasheets it would not fit anymore. The decision was made to increase the width of the board an extra 31 mm and the length with and extra 2 mm.\\
+This resulted in a board with the following dimensions: 106 mm length and 82 mm width.
+
+\subsubsection{Layout}
+
+When the board design was finished the task was to make a layout of the board. There were a lot of constrains in the space on the board as mentioned earlier. This was due to the connectors of the ZPU board and the fact that the board had extra peripherals. These peripherals needed to be on the sides of the board to connect them easliy with wires and antennas. Otherwise these would be over the board itself.  The other parts needed to be on the PCB were the microcontroller with external crystal, the multiplexer , a few LEDs and the DC/DC converters.\\
+It was chosen to have the DC/DC converters near the power supply itself to keep the tracks as small as possible. For the microcontroller  it was convienient to have it in the middle of the PCB. The WiFi module and cameras were placed near each other so it was an easy choice to place the multiplexer in between these components. This all allowed for shorter tracks and easier routing.\\
+An important decision that was made concerning the layout was to get rid of the connectors on the sides of the board. These are needed to place the PCB on the ZPU board. However none of the connections are actually needed for the design. Therefor the one 36 pin connector was replaced with two 4 pin connectors. This means there is more space for routing and the board is still stable on the ZPU  board.\\
+
+
+\subsubsection{Routing}
+
+Because of the choices made with the layout, the routing was fairly straightforward. It all fitted on the top and bottom layer of the PCB. Concering the thickness of the tracks, we took 30 mil for the 24V and 2A  power tracks. The maximum amount of current we will need is around 400mA though. The 5V tracks are made 20 mil thick and the 3V3 lines are 15 mil thick. These lines do not neccesarliy need to be this thick, but the room is there to do it and we do not want to take risk when for example the lines came out too small.
+
+
+
+\end{document}
