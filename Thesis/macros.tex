@@ -1,0 +1,133 @@
+%\usepackage[firstpage]{draftwatermark} %voor het TU Delft watermerk
+\usepackage[latin1]{inputenc} 	
+\usepackage[english]{babel} % nederlandse teksten
+\usepackage{amsmath} %AMS packages voor betere formules
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} %voor plaatjes: \includegraphics{}
+\usepackage{wrapfig} %voor plaatjes naast tekst
+\usepackage[headings,cm]{fullpage} %grotere paginasize
+\usepackage[margin=1in]{geometry} %custom geometry
+\usepackage{float}		%%%%% voor [H]
+%\usepackage{url} 	%voor \url{} omgeving, niet gebruikt
+\usepackage{multicol} %multicolom dingen
+\usepackage{hyperref} 	% voor links in PDF's en meer 
+
+\usepackage{pdfpages}
+
+%\usepackage{titlepic} 	% plaatje op eerste pagina
+\usepackage{eso-pic}%Voor TU-bies en blokken
+\usepackage{nextpage}			% Advanced nextpage commands
+
+\usepackage{standalone} %voor gefixte \input 
+\usepackage{booktabs} %voor mooie tabellen met \toprule \midrule en \bottomrule
+\usepackage{verbatim} %voor input text
+\usepackage{enumitem} 	% voor mooie enumerate 
+%\usepackage[authoryear]{natbib}
+%\setdescription{leftmargin=\parindent,labelindent=\parindent}
+
+\usepackage{xcolor}
+\colorlet{keyword}{blue!100!black!80}
+\colorlet{comment}{green!90!black!90}
+%\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\usepackage{listings} %gebruikt voor mooie code-invoer met highlighting
+\lstset{	numbers		= left,			%
+		numberstyle	= \tiny,		%
+		numbersep	= 5pt,			%
+		language	= VHDL,			%
+		breaklines	= true,			%
+		showspaces	= false,		%
+		showstringspaces= false}
+
+\lstdefinestyle{vhdl}{
+  language     = VHDL,
+  basicstyle   = \ttfamily,
+  keywordstyle = \color{keyword}\bfseries,
+  commentstyle = \color{comment}
+}
+
+
+
+
+\usepackage{siunitx}
+\sisetup{load-configurations = abbreviations}
+
+
+
+
+\usepackage{multirow} %voor meerdere rijen in tabellen
+\usepackage{fix-cm} %%%%%
+\newcommand{\matlab}{{\textsc{matlab }}} %MATLAB moet geschreven worden in smallcaps. Dit defineerd het commando \matlab dat dit doet
+
+%\autoref{} dingen
+\renewcommand{\tableautorefname}{tabel}
+\renewcommand{\figureautorefname}{figuur}
+\renewcommand{\chapterautorefname}{hoofdstuk}
+\renewcommand{\sectionautorefname}{sectie}
+\renewcommand{\subsectionautorefname}{sectie}
+\newcommand{\lstnumberautorefname}{Code}
+\renewcommand{\subsubsectionautorefname}{sectie}
+
+
+%big reference:
+\newcommand{\maxwell}[1]
+{\autoref{#1}: `\nameref{#1}'}
+
+
+
+\usepackage{calc}
+% een omgeving genaamt DESCRIPTION die werk als een enumerate, maar nu blijft de text op dezelfde indent
+\makeatletter
+\newcommand{\DESCRIPTION@original@item}{}
+\let\DESCRIPTION@original@item\item
+\newcommand*{\DESCRIPTION@envir}{DESCRIPTION}
+\newlength{\DESCRIPTION@totalleftmargin}
+\newlength{\DESCRIPTION@linewidth}
+\newcommand{\DESCRIPTION@makelabel}[1]{\llap{#1}}%
+\newcommand{\DESCRIPTION@item}[1][]{%
+  \setlength{\@totalleftmargin}%
+       {\DESCRIPTION@totalleftmargin+\widthof{\textbf{#1 }}-\leftmargin}%
+  \setlength{\linewidth}
+       {\DESCRIPTION@linewidth-\widthof{\textbf{#1 }}+\leftmargin}%
+  \par\parshape \@ne \@totalleftmargin \linewidth
+  \DESCRIPTION@original@item[\textbf{#1}]%
+}
+\newenvironment{DESCRIPTION}
+  {\list{}{\setlength{\labelwidth}{0cm}%
+           \let\makelabel\DESCRIPTION@makelabel}%
+   \setlength{\DESCRIPTION@totalleftmargin}{\@totalleftmargin}%
+   \setlength{\DESCRIPTION@linewidth}{\linewidth}%
+   \renewcommand{\item}{\ifx\@currenvir\DESCRIPTION@envir
+                           \expandafter\DESCRIPTION@item
+                        \else
+                           \expandafter\DESCRIPTION@original@item
+                        \fi}}
+  {\endlist}
+\makeatother
+
+
+
+%Dit is voor een newline na een paragraph. Vind ik mooier. als je dat niet vind moet je het verwijderen.
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+%end
+
+%dit is zodat hyperlinks niet blauw zijn.
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\setlength{\parindent}{0cm}
+
+\let\endtitlepage\relax
+
+

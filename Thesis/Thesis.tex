@@ -1,0 +1,72 @@
+\documentclass[parskip=full,11pt,a4paper,titlepage]{article}
+\usepackage{import}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage[export]{adjustbox}
+\usepackage[]{mcode}
+\inputfrom{.}{macros}
+
+\title{TITLE}
+ \author{P}
+\bibliographystyle{harvard}
+\date{\today}
+\begin{document}
+\input{frontpage}
+
+
+\clearpage
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+	Version	& Date & Comments \\
+\hline
+	1.0		& 	 & Start of thesis \\
+\hline
+\end{tabular}
+\end{center}
+\clearpage
+
+
+\tableofcontents
+\clearpage
+
+%\section{Introduction}
+%\subimport{}{introduction}
+%\clearpage
+
+%\section{}
+%\subimport{}{}
+%\clearpage
+
+
+% Needed to be written:
+% Introduction
+% Specifications
+% Design choices
+% Implementation
+% Results
+% Discussion
+% Conclusion
+% Bibliography
+% Appendix
+
+
+%\appendix
+%\inputfrom{Appendix/}{main.tex}
+
+%\begin{thebibliography}{9}
+
+%\bibitem{labelboek1} %%%LABEL NIET VERANDEREN
+%E.A. Hendriks, A. Bakker, A. Frehe, P. Groeneveld
+%R. Nouta, C. Verhoeven, S. de Graaf, J. Liedorp, A.J. van Genderen, 
+%\emph{Project Maak een Chip}, 
+%Delft University of Technology, 
+%September 2013.
+
+%\end{thebibliography}
+
+
+\input{backpage}
+\end{document}
